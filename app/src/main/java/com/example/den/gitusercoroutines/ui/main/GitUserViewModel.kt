@@ -34,5 +34,10 @@ class GitUserViewModel : BaseObservable() {
     val userCompany: String?
         get() = userDetail?.company
 
+    @get:Bindable
+    val userSelected: Boolean?
+        get() = user?.Selected
+
+
 
 }

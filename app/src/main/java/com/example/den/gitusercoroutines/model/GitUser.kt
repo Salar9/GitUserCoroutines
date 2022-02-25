@@ -11,5 +11,6 @@ data class GitUser(
     val starred_url: String,
     val gists_url: String,
     val type: String,
-    val score: String
+    val score: String,
+    var Selected: Boolean
 )
