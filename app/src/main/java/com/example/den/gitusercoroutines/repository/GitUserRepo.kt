@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 private const val TAG = "GitRepo"
 
-class GitUserRepo {
+object GitUserRepo {
     private val gitApi: GitApi
     init {
         Log.i(TAG,"Create Repo")

@@ -9,8 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.den.gitusercoroutines.FavoritesFragment
 import com.example.den.gitusercoroutines.R
-import com.example.den.gitusercoroutines.database.GitUserDB
+import com.example.den.gitusercoroutines.model.GitUserDB
 import com.example.den.gitusercoroutines.databinding.GitUserListItemBinding
 import com.example.den.gitusercoroutines.databinding.MainFragmentBinding
 import com.example.den.gitusercoroutines.model.GitUser
@@ -48,9 +49,10 @@ class MainFragment : Fragment() {
                 true
             }
             R.id.show_favorites->{
-                runBlocking {
-                    Log.i(TAG,"DAO Size ${viewModel.gitUserDaoRepo.getFavoritesUser().size}")
-                }
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, FavoritesFragment())
+                    .addToBackStack(null)
+                    .commit()
                 true
             }
             else -> return super.onOptionsItemSelected(item)

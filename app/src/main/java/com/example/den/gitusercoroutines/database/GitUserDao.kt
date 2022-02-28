@@ -1,10 +1,9 @@
 package com.example.den.gitusercoroutines.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import kotlinx.coroutines.flow.Flow
+import com.example.den.gitusercoroutines.model.GitUserDB
 
 @Dao
 interface GitUserDao {

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Kotlin/TestProjects/GitUserCoroutines/app/src/main/res/layout/fragment_favorites.xml" value="0.33958333333333335" />
         <entry key="..\:/Android/Kotlin/TestProjects/GitUserCoroutines/app/src/main/res/layout/git_user_list_item.xml" value="0.317481884057971" />
         <entry key="..\:/Android/Kotlin/TestProjects/GitUserCoroutines/app/src/main/res/layout/git_user_list_item_select.xml" value="0.33" />
         <entry key="..\:/Android/Kotlin/TestProjects/GitUserCoroutines/app/src/main/res/layout/main_activity.xml" value="0.317481884057971" />

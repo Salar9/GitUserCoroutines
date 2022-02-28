@@ -1,4 +1,4 @@
-package com.example.den.gitusercoroutines.database
+package com.example.den.gitusercoroutines.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

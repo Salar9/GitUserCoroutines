@@ -2,7 +2,7 @@ package com.example.den.gitusercoroutines.repository
 
 import android.content.Context
 import androidx.room.Room
-import com.example.den.gitusercoroutines.database.GitUserDB
+import com.example.den.gitusercoroutines.model.GitUserDB
 import com.example.den.gitusercoroutines.database.GitUserDatabase
 
 

@@ -8,6 +8,6 @@ import com.example.den.gitusercoroutines.repository.GitUserRepo
 class MainViewModel : ViewModel() {
     var gitUsers = listOf<GitUser>()
 
-    val gitUserRepo = GitUserRepo()
+    val gitUserRepo = GitUserRepo
     val gitUserDaoRepo = GitUserDaoRepo.get()
 }
