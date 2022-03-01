@@ -7,4 +7,4 @@
 - При выборе пункта меню Add to favorites выбранные пользователи сохраняются в БД SQLite и приложение переходит в первоначальный режим отображения
 - При выборе пункта меню Show favorites отображается новый фрагмент в RecycterView которого показываются пользователи добавленные в избранное
 
-В приложении используются Retrofit2, Kotlin Coroutines, Room, Picasso, GestureDetector
+В приложении используются Retrofit2, Kotlin Coroutines, Room, Picasso, GestureDetector, DataBinding, MVVM
