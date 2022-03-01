@@ -1,4 +1,4 @@
-package com.example.den.gitusercoroutines
+package com.example.den.gitusercoroutines.ui.main
 
 import android.os.Bundle
 import android.util.Log
@@ -11,17 +11,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.den.gitusercoroutines.R
 import com.example.den.gitusercoroutines.databinding.FragmentFavoritesBinding
 import com.example.den.gitusercoroutines.databinding.GitUserListItemBinding
 import com.example.den.gitusercoroutines.model.GitUser
 import com.example.den.gitusercoroutines.model.GitUserDB
-import com.example.den.gitusercoroutines.ui.main.GitUserViewModel
-import com.example.den.gitusercoroutines.ui.main.MainViewModel
 import kotlinx.coroutines.runBlocking
 
 private const val TAG = "FavoritesFragment"
 
-//TODO: Добавить кнопку удаления из избранного и необходимые методы
 class FavoritesFragment : Fragment() {
     private lateinit var binding: FragmentFavoritesBinding
 
@@ -36,9 +34,13 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         runBlocking {
-            val favoritesUsers = viewModel.gitUserDaoRepo.getFavoritesUser()
-            Log.i(TAG,"Favorites size - ${favoritesUsers.size}")
-            binding.favoritesRecyclerView.adapter = GitUserDBAdapter(favoritesUsers)
+            try {
+                val favoritesUsers = viewModel.gitUserDaoRepo.getFavoritesUser()
+                binding.favoritesRecyclerView.adapter = GitUserDBAdapter(favoritesUsers)
+            }
+            catch (e: Exception){
+                Log.i(TAG, e.toString())
+            }
         }
     }
 
@@ -72,9 +74,7 @@ class FavoritesFragment : Fragment() {
             val binding = DataBindingUtil.inflate<GitUserListItemBinding>(layoutInflater, R.layout.git_user_list_item, parent,false)
             return GitUserDBHolder(binding)
         }
-
         override fun onBindViewHolder(holder: FavoritesFragment.GitUserDBHolder, position: Int) {
-            holder.binding.checkBox2.isVisible = true
             holder.bind(users[position])
         }
         override fun getItemCount() = users.size

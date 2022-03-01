@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.den.gitusercoroutines.FavoritesFragment
 import com.example.den.gitusercoroutines.R
 import com.example.den.gitusercoroutines.model.GitUserDB
 import com.example.den.gitusercoroutines.databinding.GitUserListItemBinding
@@ -50,7 +49,7 @@ class MainFragment : Fragment() {
             }
             R.id.show_favorites->{
                 requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, FavoritesFragment())
+                    .replace(R.id.container, FavoritesFragment.newInstance())
                     .addToBackStack(null)
                     .commit()
                 true
@@ -80,7 +79,6 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //TODO: попробовать пененести это или в репозиторий или во viewModel
         runBlocking {
             try {
                 viewModel.gitUsers = viewModel.gitUserRepo.getUsers()
